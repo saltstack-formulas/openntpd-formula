@@ -1,0 +1,25 @@
+openntpd:
+  listen: 
+    - vlan1
+    - address: vlan2
+      rtable: 2
+
+  servers:
+    - pool.ntp.org
+    - address: pool.ntp.org
+      weight: 3
+      rtable: 5
+
+  server:
+    - 192.168.0.1
+    - address: 192.168.0.2
+      weight: 3
+
+  sensor:
+    - '*'
+    - device: nmea0
+      correction: 70000
+      weight: 2
+      refid: GPS
+      stratum: 2
+
