@@ -1,0 +1,11 @@
+{% set openntpd = salt['grains.filter_by']({
+    'Debian': {
+        'package': 'openntpd',
+        'service': 'openntpd',
+        'conffile': '/etc/openntpd/ntpd.conf',
+    },
+    'OpenBSD': {
+        'service': 'ntpd',
+        'conffile': '/etc/ntpd.conf',
+    },
+}, merge=salt['pillar.get']('openntpd:lookup')) %}
