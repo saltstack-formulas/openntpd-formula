@@ -1,19 +1,33 @@
+# There are 4 possibles entries
+#  - listen
+#  - server
+#  - servers
+#  - sensor
+#
+# Each accept the following type:
+#  - a string
+#  - a list of string
+#  - a list of dict
+#  
+
+# simple standalone configuration for a local server, sync with external ntp server
 openntpd:
-  listen: 
-    - vlan1
-    - address: vlan2
-      rtable: 2
+  listen: '*'
+  servers: pool.ntp.org
+
+--- 
+# more complexe configuration
+openntpd:
+  listen:
+    - '*'
+    - address: 192.168.1.55
+      rtable: 1
+
+  server: 192.168.0.2
 
   servers:
-    - pool.ntp.org
     - address: pool.ntp.org
-      weight: 3
-      rtable: 5
-
-  server:
-    - 192.168.0.1
-    - address: 192.168.0.2
-      weight: 3
+      weight: 2
 
   sensor:
     - '*'
