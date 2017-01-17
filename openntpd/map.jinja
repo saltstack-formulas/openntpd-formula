@@ -8,4 +8,9 @@
         'service': 'ntpd',
         'conffile': '/etc/ntpd.conf',
     },
+    'Arch': {
+        'package': 'openntpd',
+	'service': 'openntpd',
+	'conffile': '/etc/ntpd.conf',
+    },
 }, merge=salt['pillar.get']('openntpd:lookup')) %}
