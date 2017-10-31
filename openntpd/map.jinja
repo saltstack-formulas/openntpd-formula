@@ -3,19 +3,23 @@
         'package': 'openntpd',
         'service': 'openntpd',
         'conffile': '/etc/openntpd/ntpd.conf',
+        'binary': '/usr/sbin/ntpd',
     },
     'OpenBSD': {
         'service': 'ntpd',
         'conffile': '/etc/ntpd.conf',
+        'binary': '/usr/sbin/ntpd',
     },
     'Arch': {
         'package': 'openntpd',
         'service': 'openntpd',
         'conffile': '/etc/ntpd.conf',
+        'binary': '/usr/sbin/ntpd',
     },
     'FreeBSD': {
         'package': 'openntpd',
         'service': 'openntpd',
         'conffile': '/usr/local/etc/ntpd.conf',
+        'binary': '/usr/local/sbin/ntpd',
     },
 }, merge=salt['pillar.get']('openntpd:lookup')) %}
