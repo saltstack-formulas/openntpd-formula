@@ -5,6 +5,7 @@ openntpd-config:
     - name: {{ openntpd.conffile }}
     - source: salt://openntpd/files/ntpd.conf
     - template: jinja
+    - check_cmd: {{ openntpd.binary }} -n -f
     - watch_in:
       - service: openntpd
     - require_in:
