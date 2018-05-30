@@ -1,0 +1,9 @@
+### THIS FILE IS MANAGED BY SALT. ###
+{%- set additional_flags = salt['pillar.get']('openntpd:additional_flags', False) %}
+{%- set additional_flags = ' ' + additional_flags|join(' ') if additional_flags else ''%}
+# /etc/default/openntpd
+
+# Append '-s' to set the system time when starting in case the offset
+# between the local clock and the servers is more than 180 seconds.
+# For other options, see man ntpd(8).
+DAEMON_OPTS="-f /etc/openntpd/ntpd.conf{{ additional_flags }}"
