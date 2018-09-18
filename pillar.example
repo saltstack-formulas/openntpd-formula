@@ -18,6 +18,8 @@ openntpd:
 --- 
 # more complexe configuration
 openntpd:
+  additional_flags:
+    - '-s'
   listen:
     - '*'
     - address: 192.168.1.55
@@ -41,4 +43,3 @@ openntpd:
       weight: 2
       refid: GPS
       stratum: 2
-
