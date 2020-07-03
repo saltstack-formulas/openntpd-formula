@@ -43,3 +43,10 @@ openntpd:
       weight: 2
       refid: GPS
       stratum: 2
+
+  constraint:
+    - '9.9.9.9'
+    - '2620:fe::fe'
+
+  constraints:
+    - 'www.google.com'
