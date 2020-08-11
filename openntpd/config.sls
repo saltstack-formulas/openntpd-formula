@@ -23,4 +23,4 @@ openntpd-config:
       - service: openntpd
     - require_in:
       - service: openntpd
-{%  endif%}
+{%  endif %}
