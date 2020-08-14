@@ -1,0 +1,9 @@
+name: openntpd
+os: Debian, Ubuntu, Raspbian, Arch, Manjaro
+os_family: Debian, Arch
+version: 0.1.0
+release: 1
+minimum_version: 2019.2
+summary: openntpd formula
+description: Formula to install and configure an openntpd server
+top_level_dir: openntpd

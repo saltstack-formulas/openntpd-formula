@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
 # There are 4 possibles entries
 #  - listen
 #  - server
@@ -8,15 +11,18 @@
 #  - a string
 #  - a list of string
 #  - a list of dict
-#  
+#
 
+######################################################################################
 # simple standalone configuration for a local server, sync with external ntp server
-openntpd:
-  listen: '*'
-  servers: pool.ntp.org
+######################################################################################
+# openntpd:
+#   listen: '*'
+#   servers: pool.ntp.org
 
---- 
+######################################################################################
 # more complexe configuration
+######################################################################################
 openntpd:
   additional_flags:
     - '-s'
@@ -25,7 +31,8 @@ openntpd:
     - address: 192.168.1.55
       rtable: 1
 
-  server: 192.168.0.2
+  # single server:
+  # server: 192.168.0.2
 
   # multiple servers:
   server:
