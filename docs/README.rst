@@ -58,14 +58,19 @@ Available states
 
 ``openntpd``
 ^^^^^^^^^^^^
+Installs and configures the openntpd package.
 
-Installs the ``openntpd`` server package and service.
+``openntpd.package``
+^^^^^^^^^^^^^^^^^^^^
+Installs the openntpd package.
 
 ``openntpd.config``
 ^^^^^^^^^^^^^^^^^^^
+This state manages the file ``ntpd.conf`` under ``/etc/openntpd`` (template found in "openntpd/files"). The configuration is populated by values in "openntpd/map.jinja" based on the package's default values (and RedHat, Debian, Suse and Arch family distribution specific values), which can then be overridden by values of the same name in pillar.
 
-Installs the openntpd daemon configuration file included in this formula (under
-"openntpd/files"). This configuration file is populated by values from pillar. 
+``openntpd.service``
+^^^^^^^^^^^^^^^^^^^^
+Manages the startup and running state of the openntpd service.
 
 Testing
 -------
