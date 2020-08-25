@@ -1,0 +1,8 @@
+# yamllint disable rule:indentation rule:line-length
+# Ubuntu-16.04
+---
+openntpd:
+  binary: /usr/sbin/ntpd
+  conffile: /etc/openntpd/ntpd.conf
+  package: openntpd
+  service: openntpd
