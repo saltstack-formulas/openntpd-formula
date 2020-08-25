@@ -154,7 +154,7 @@ suites:
         base:
           '*':
             - openntpd._mapdata
-            - openntpd.config
+            - openntpd
       pillars:
         top.sls:
           base:

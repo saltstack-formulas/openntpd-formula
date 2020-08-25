@@ -2,7 +2,14 @@
 # Debian-9
 ---
 openntpd:
+  arch: amd64
   binary: /usr/sbin/ntpd
   conffile: /etc/openntpd/ntpd.conf
+  listen: '*'
   package: openntpd
+  server:
+  - address: 0.debian.pool.ntp.org
+  - address: 1.debian.pool.ntp.org
+  - address: 2.debian.pool.ntp.org
+  - address: 3.debian.pool.ntp.org
   service: openntpd
