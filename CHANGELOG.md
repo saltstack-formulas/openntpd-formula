@@ -1,5 +1,17 @@
 # Changelog
 
+# [0.2.0](https://github.com/saltstack-formulas/openntpd-formula/compare/v0.1.2...v0.2.0) (2020-08-25)
+
+
+### Features
+
+* **map:** sync map.jinja with template-formula ([ed386a8](https://github.com/saltstack-formulas/openntpd-formula/commit/ed386a83658feac22bdab86c5b5e802b29c30092))
+
+
+### Tests
+
+* **_mapdata:** update for merging from test pillar ([aec6af0](https://github.com/saltstack-formulas/openntpd-formula/commit/aec6af0054b9b8fffc81c780849d6704461f7dfa))
+
 ## [0.1.2](https://github.com/saltstack-formulas/openntpd-formula/compare/v0.1.1...v0.1.2) (2020-08-25)
 
 

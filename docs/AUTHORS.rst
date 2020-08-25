@@ -18,15 +18,15 @@ This list is sorted by the number of commits per contributor in *descending* ord
      - 9
    * - :raw-html-m2r:`<img class='float-left rounded-1' src='https://avatars2.githubusercontent.com/u/10231489?v=4' width='36' height='36' alt='@myii'>`
      - `@myii <https://github.com/myii>`_
-     - 7
+     - 9
    * - :raw-html-m2r:`<img class='float-left rounded-1' src='https://avatars0.githubusercontent.com/u/1920805?v=4' width='36' height='36' alt='@alxwr'>`
      - `@alxwr <https://github.com/alxwr>`_
      - 6
-   * - :raw-html-m2r:`<img class='float-left rounded-1' src='https://avatars3.githubusercontent.com/u/637504?v=4' width='36' height='36' alt='@jasperla'>`
-     - `@jasperla <https://github.com/jasperla>`_
-     - 1
    * - :raw-html-m2r:`<img class='float-left rounded-1' src='https://avatars3.githubusercontent.com/u/3433835?v=4' width='36' height='36' alt='@n-rodriguez'>`
      - `@n-rodriguez <https://github.com/n-rodriguez>`_
+     - 2
+   * - :raw-html-m2r:`<img class='float-left rounded-1' src='https://avatars3.githubusercontent.com/u/637504?v=4' width='36' height='36' alt='@jasperla'>`
+     - `@jasperla <https://github.com/jasperla>`_
      - 1
    * - :raw-html-m2r:`<img class='float-left rounded-1' src='https://avatars0.githubusercontent.com/u/17393048?v=4' width='36' height='36' alt='@ek9'>`
      - `@ek9 <https://github.com/ek9>`_
