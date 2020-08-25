@@ -2,6 +2,15 @@
 Changelog
 =========
 
+`0.1.2 <https://github.com/saltstack-formulas/openntpd-formula/compare/v0.1.1...v0.1.2>`_ (2020-08-25)
+----------------------------------------------------------------------------------------------------------
+
+Tests
+^^^^^
+
+
+* **map:** verify ``map.jinja`` dump using ``_mapdata`` state (\ `80c4eaa <https://github.com/saltstack-formulas/openntpd-formula/commit/80c4eaa9b083be33790374cc24af5f759809e88b>`_\ )
+
 `0.1.1 <https://github.com/saltstack-formulas/openntpd-formula/compare/v0.1.0...v0.1.1>`_ (2020-08-14)
 ----------------------------------------------------------------------------------------------------------
 
