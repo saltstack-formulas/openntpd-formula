@@ -13,5 +13,5 @@ openntpd/service/running:
   service.running:
     - name: {{ openntpd.service }}
     - enable: true
-    - require:
+    - watch:
       - sls: {{ sls_config_file }}
