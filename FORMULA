@@ -1,7 +1,7 @@
 name: openntpd
 os: Debian, Ubuntu, Raspbian, Arch, Manjaro
 os_family: Debian, Arch
-version: 0.2.0
+version: 0.2.1
 release: 1
 minimum_version: 2019.2
 summary: openntpd formula

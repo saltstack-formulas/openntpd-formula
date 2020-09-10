@@ -2,6 +2,15 @@
 Changelog
 =========
 
+`0.2.1 <https://github.com/saltstack-formulas/openntpd-formula/compare/v0.2.0...v0.2.1>`_ (2020-09-10)
+----------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **state:** restart service when configuration has changed (\ `9fc8fbd <https://github.com/saltstack-formulas/openntpd-formula/commit/9fc8fbda597d4acb603997080643125725d8ef37>`_\ )
+
 `0.2.0 <https://github.com/saltstack-formulas/openntpd-formula/compare/v0.1.2...v0.2.0>`_ (2020-08-25)
 ----------------------------------------------------------------------------------------------------------
 
