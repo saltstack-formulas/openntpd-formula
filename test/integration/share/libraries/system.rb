@@ -4,46 +4,17 @@
 # Author: Daniel Dehennin <daniel.dehennin@ac-dijon.fr>
 # Copyright (C) 2020 Daniel Dehennin <daniel.dehennin@ac-dijon.fr>
 
-HOSTNAME_CMDS = %w[hostname hostnamectl].freeze
-HOSTNAME_CMDS_OPT = {
-  'hostname' => '-s',
-  'hostnamectl' => '--static'
-}.freeze
-
 class SystemResource < Inspec.resource(1)
   name 'system'
 
   attr_reader :platform
-  attr_reader :hostname
 
   def initialize
+    super
     @platform = build_platform
-    @hostname = found_hostname
   end
 
   private
-
-  def found_hostname
-    cmd = guess_hostname_cmd
-
-    unless cmd.exit_status.zero?
-      raise Inspec::Exceptions::ResourceSkipped,
-            "Error running '#{cmd}': #{cmd.stderr}"
-    end
-
-    cmd.stdout.chomp
-  end
-
-  def guess_hostname_cmd
-    HOSTNAME_CMDS.each do |cmd|
-      if inspec.command(cmd).exist?
-        return inspec.command("#{cmd} #{HOSTNAME_CMDS_OPT[cmd]}")
-      end
-    end
-
-    raise Inspec::Exceptions::ResourceSkipped,
-          "Error: #{@platform[:finger]}} has none of #{HOSTNAME_CMDS.join(', ')}"
-  end
 
   def build_platform
     {
@@ -56,8 +27,8 @@ class SystemResource < Inspec.resource(1)
 
   def build_platform_family
     case inspec.platform[:name]
-    when 'arch'
-      'arch'
+    when 'arch', 'gentoo'
+      inspec.platform[:name]
     else
       inspec.platform[:family]
     end
@@ -65,13 +36,16 @@ class SystemResource < Inspec.resource(1)
 
   def build_platform_name
     case inspec.platform[:name]
-    when 'amazon'
-      'amazonlinux'
+    when 'amazon', 'oracle'
+      "#{inspec.platform[:name]}linux"
+    when 'windows_8.1_pro', 'windows_server_2019_datacenter'
+      'windows'
     else
       inspec.platform[:name]
     end
   end
 
+  # rubocop:disable Metrics/MethodLength
   def build_platform_release
     case inspec.platform[:name]
     when 'amazon'
@@ -79,8 +53,24 @@ class SystemResource < Inspec.resource(1)
       inspec.platform[:release].gsub(/2018.*/, '1')
     when 'arch'
       'base-latest'
+    when 'gentoo'
+      "#{inspec.platform[:release].split('.')[0]}-#{derive_gentoo_init_system}"
+    when 'windows_8.1_pro'
+      '8.1'
+    when 'windows_server_2019_datacenter'
+      '2019-server'
     else
       inspec.platform[:release]
+    end
+  end
+  # rubocop:enable Metrics/MethodLength
+
+  def derive_gentoo_init_system
+    case inspec.command('systemctl').exist?
+    when true
+      'sysd'
+    else
+      'sysv'
     end
   end
 
