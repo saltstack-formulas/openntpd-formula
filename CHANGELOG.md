@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/saltstack-formulas/openntpd-formula/compare/v0.2.2...v0.2.3) (2020-12-23)
+
+
+### Code Refactoring
+
+* **map:** use top-level `values:` key in `map.jinja` dumps ([264445b](https://github.com/saltstack-formulas/openntpd-formula/commit/264445b3180f9ccea69874858b626101f28f54b6))
+
 ## [0.2.2](https://github.com/saltstack-formulas/openntpd-formula/compare/v0.2.1...v0.2.2) (2020-12-22)
 
 
