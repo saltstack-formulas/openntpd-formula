@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.4](https://github.com/saltstack-formulas/openntpd-formula/compare/v0.2.3...v0.2.4) (2021-01-14)
+
+
+### Bug Fixes
+
+* **_mapdata:** ensure map data is directly under `values` ([90acda9](https://github.com/saltstack-formulas/openntpd-formula/commit/90acda9a6697ce569410f383a4244d9b75bab392))
+
+
+### Tests
+
+* **_mapdata:** update for `_mapdata/init.sls` change ([3935390](https://github.com/saltstack-formulas/openntpd-formula/commit/3935390361f7ec38c29eec9b2410c4196a2d9cf4))
+
 ## [0.2.3](https://github.com/saltstack-formulas/openntpd-formula/compare/v0.2.2...v0.2.3) (2020-12-23)
 
 
