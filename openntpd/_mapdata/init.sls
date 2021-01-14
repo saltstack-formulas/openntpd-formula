@@ -6,9 +6,7 @@
 {%- from tplroot ~ "/map.jinja" import openntpd with context %}
 
 {%- set _mapdata = {
-      "values": {
-        "openntpd": openntpd,
-      }
+      "values": openntpd,
     } %}
 {%- do salt["log.debug"]("### MAP.JINJA DUMP ###\n" ~ _mapdata | yaml(False)) %}
 
