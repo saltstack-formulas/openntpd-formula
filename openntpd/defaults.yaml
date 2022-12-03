@@ -6,3 +6,4 @@ openntpd:
   service: openntpd
   binary: /usr/sbin/ntpd
   conffile: /etc/openntpd/ntpd.conf
+  apparmor_enabled: False
