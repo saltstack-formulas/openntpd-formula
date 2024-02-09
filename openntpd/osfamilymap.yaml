@@ -20,3 +20,6 @@ FreeBSD:
 
 Arch:
   conffile: /etc/ntpd.conf
+
+Debian:
+  apparmor_enabled: True

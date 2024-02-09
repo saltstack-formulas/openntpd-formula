@@ -16,7 +16,14 @@ openntpd/config/install:
     - name: {{ openntpd.conffile }}
     - source: salt://openntpd/files/ntpd.conf
     - template: jinja
+# {{ openntpd | json }}
+{%  if openntpd.apparmor_enabled %}
+{%      set cfg = openntpd.conffile %}
+{%      set bak = openntpd.conffile ~ '.check_bak' %}
+    - check_cmd: sh -c 'cp {{ cfg }} {{ bak }} && cp $0 {{ cfg }} && {{ openntpd.binary }} -n -f {{ cfg }}; res=$?; mv {{ bak }} {{ cfg }}; exit $res'
+{%  else %}
     - check_cmd: {{ openntpd.binary }} -n -f
+{%  endif %}
     - user: root
     - mode: 644
     - makedirs: true
